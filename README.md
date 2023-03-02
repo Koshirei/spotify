@@ -2,7 +2,7 @@
 
 ## Student name
 
-> Please write your name and surname here
+> CLAUSE Axel
 
 ## Get started
 
