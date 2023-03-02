@@ -16,7 +16,7 @@ const {darkAlgorithm} = theme;
 const App = () => (
     <div className="app">
 	<ConfigProvider
-		theme={{algorithm: darkAlgorithm}}
+		theme={{algorithm: darkAlgorithm}
 	>
         <span className="flexbox_wrapper">
             <Drawer />

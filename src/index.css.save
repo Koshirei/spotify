@@ -129,5 +129,4 @@ table {
 }
 
 .flexbox_wrapper{
-    display:flex;
-}
+    display:flex;}
