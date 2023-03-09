@@ -1,37 +1,41 @@
-// import React from 'react';
 import './index.css';
 
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+
 import {ConfigProvider, theme } from 'antd';
 import Drawer from './Drawer';
 import Homepage from './Homepage';
-// import TodoListBasic from './TodoListBasic';
-// import TodoListEdit from './TodoListEdit';
-// import TodoListWithDesign from './TodoListWithDesign';
-// import TodoListRedux from './TodoListRedux';
-// import Example from './Example';
+import store from './Redux/SpotifyStore';
+import Footer from './Footer';
+
 
 const {darkAlgorithm} = theme;
 const App = () => (
     <div className="app">
-	<ConfigProvider
-		theme={{algorithm: darkAlgorithm}}
-	>
-        <span className="flexbox_wrapper">
-            <Drawer />
-            <Routes>
-                <Route path="/home" element={<Homepage />} />
-                {/* <Route path="/todo-list-basic" element={<TodoListBasic />} /> */}
-                {/* <Route path="/todo-list-with-design" element={<TodoListWithDesign />} /> */}
-                {/* <Route path="/todo-list-edit" element={<TodoListEdit />} /> */}
-                {/* <Route path="/todo-list-redux" element={<TodoListRedux />} /> */}
-                    {/* <Route path="/example" element={<Example />} /> */}
-                <Route path="*" element={<Navigate to="/home
-                " />} />
-            </Routes>
-        </span>
-	</ConfigProvider>
+        <ConfigProvider
+            theme={
+                {
+                    algorithm: darkAlgorithm,
+                    token:{
+                        colorPrimary: 'white'
+                    }
+                }
+            }
+        >
+            <Provider store={store}>
+                <span className="flexbox_wrapper">
+                    <Drawer />
+                    <span className='maxHeight'>
+                        <Routes>
+                            <Route path="/home" element={<Homepage />} />
+                            <Route path="/test" element={<Homepage />} />
+                        </Routes>
+                    </span>
+                </span>
+                <Footer />
+            </Provider>
+        </ConfigProvider>
     </div>
 );
 

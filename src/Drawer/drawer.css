@@ -1,16 +1,29 @@
 .side_menu{
-    height:795px;
+    height:90vh;
     width: 301px;
+	z-index: 10;
+	overflow: auto;
 }
 
 .spotify_logo{
 	margin-top:31px;
-	margin-left:29px;
 }
 
-.side_main_icon{
-	font-size:100px;
+.displayFlex{
+	display: flex;
 }
 
-h1{
-font-weight:bold;}
+.marginLeft{
+	margin-left: 10px;
+}
+.favoriteThumbnail{
+	display:block;
+	width: 30px;
+	height:30px;
+}
+
+.centeredIconDrawer{
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+}

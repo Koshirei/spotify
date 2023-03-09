@@ -7682,6 +7682,11 @@
   dependencies:
     "performance-now" "^2.1.0"
 
+"random-hex@^1.0.2":
+  "integrity" "sha512-MZa4hZIAFdVV/mzB1YZjdwrjzsjuYzR7gY1R9GDCQqGJYbbyQHp9+uS3T3vmhYM+GagELvufkE1eD0T1nSS1uQ=="
+  "resolved" "https://registry.npmjs.org/random-hex/-/random-hex-1.0.2.tgz"
+  "version" "1.0.2"
+
 "randombytes@^2.1.0":
   "integrity" "sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ=="
   "resolved" "https://registry.npmjs.org/randombytes/-/randombytes-2.1.0.tgz"
