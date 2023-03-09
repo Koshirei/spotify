@@ -61,6 +61,7 @@ const AddPlaylistModal = () => {
         title={"Add Playlist"}
         footer={[
             <Button 
+                shape="round"
                 style={{background:"#1DB954"}}
                 onClick={handleOnModalOk}
             >Create</Button>
