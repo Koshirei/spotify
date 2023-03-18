@@ -9,7 +9,7 @@
 
 .card:hover{
     cursor: pointer;
-    outline-color: #1DB954;
+    outline-color: 1DB954;
 }
 
 .cardThumbnail {

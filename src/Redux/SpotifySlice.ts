@@ -41,8 +41,8 @@ const initTopPlaylists = () => {
 
 	years.forEach((year)=>{
 		playlist.push({
-			id: crypto.randomUUID(),
-			name: year.toString(),
+			id: "top-50-"+year.toString(),
+			name: "top 50 - " + year.toString(),
 			randomHex1: randomHex.generate(),
 			randomHex2: randomHex.generate(),
 			songs: data.filter((song: SongDataInterface)=>song.year == year)

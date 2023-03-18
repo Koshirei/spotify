@@ -20,7 +20,6 @@ const Card = ({
 
     return <Col
         span={6}
-        className="cardHover"
         onClick={() => navigate("/playlist/" + playlist.id)}
     >
         <div className="card">

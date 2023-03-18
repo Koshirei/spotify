@@ -44,7 +44,7 @@ const Drawer = () => {
       alt="Spotify's logo"
       src="/img/spotify logo.png"
       width={164}
-      preview={false} />, "spotify_logo", "", [], "group"),
+      preview={false} />, "spotify_logo", "", [], "grup"),
 
     getItem(<div>Home</div>, 'home', <HomeFilled style={{ fontSize: '30px' }} />),
     getItem(<div>Add Playlist</div>, 'add_playlist', <PlusSquareFilled style={{ fontSize: '30px', }}/>),
@@ -58,7 +58,7 @@ const Drawer = () => {
         <HeartFilled className='centeredIconDrawer'/>
       </div>
       <span className='marginLeft'>{playlists[0].name}</span>
-    </div>, '/playlist/'+playlists[0].id),
+    </div>, 'playlist/'+playlists[0].id),
 
   ];
 

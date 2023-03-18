@@ -1,6 +1,6 @@
 import './index.css';
 
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import {ConfigProvider, theme } from 'antd';
@@ -11,6 +11,7 @@ import Playlist from './Playlist';
 
 import store from './Redux/SpotifyStore';
 import Footer from './Footer';
+
 
 const {darkAlgorithm} = theme;
 const App = () => (
@@ -31,8 +32,8 @@ const App = () => (
                     <span className='maxHeight'>
                         <Routes>
                             <Route path="/home" element={<Homepage />} />
-			    <Route path="/playlist/:id" element={<Playlist />} />
-                            <Route path="*" element={<Navigate to="/home" />} />
+			    <Route path="/playlist/:id element={<Playlist />} />
+                            <Route path="/test" element={<Homepage />} />
                         </Routes>
                     </span>
                 </span>
