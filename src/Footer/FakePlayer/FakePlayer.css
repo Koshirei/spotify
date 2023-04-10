@@ -1,0 +1,26 @@
+.fakePlayer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fakePlayerTop{
+    text-align: center;
+}
+.fakePlayerIcon1{
+    font-size: large;
+    padding-right: 20px;
+}
+.fakePlayerIcon2{
+    font-size: xx-large;
+    padding-right: 20px;
+}
+.fakePlayerBar{
+    display: inline-block;
+    border-radius: 4px;
+    height: 8px;
+    width:600px;
+    background-color: #303030;
+}
+.fakePlayerTime{
+    font-size: smaller;
+}

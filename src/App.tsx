@@ -15,6 +15,7 @@ import Footer from './Footer';
 const {darkAlgorithm} = theme;
 const App = () => (
     <div className="app">
+        <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'></link>
         <ConfigProvider
             theme={
                 {
@@ -31,7 +32,7 @@ const App = () => (
                     <span className='maxHeight'>
                         <Routes>
                             <Route path="/home" element={<Homepage />} />
-			    <Route path="/playlist/:id" element={<Playlist />} />
+			                <Route path="/playlist/:id" element={<Playlist />} />
                             <Route path="*" element={<Navigate to="/home" />} />
                         </Routes>
                     </span>

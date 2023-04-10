@@ -1,0 +1,20 @@
+.FakeControls{
+    padding-top: 20px;
+}
+
+.FakeControlsVolumeBar{
+    display: inline-block;
+    height:8px;
+    width: 115px;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.FakeControlsGreen{
+    color: #1DB954;
+}
+
+.FakeControlsIcon{
+    margin-left: 10px;
+    font-size: x-large;
+}

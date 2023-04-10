@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Typography, Col } from "antd";
-import { HeartFilled} from '@ant-design/icons';
 
 import { PlaylistInterface } from "../../../Redux/SpotifySlice";
 import './Card.css';
@@ -18,24 +17,23 @@ const Card = ({
 
     const navigate = useNavigate()
 
-    return <Col span={6}
-        className="cardHover"
+    return <Col span={4}
         onClick={()=>navigate("/playlist/"+playlist.id)}
     >
-        <div className="card">
-            <div className="cardThumbnail"
-                style={{background: "linear-gradient(0deg, "+ playlist.randomHex1 +" 0%, "+ playlist.randomHex2 +" 100%)"}}
-            >
-                { playlist.name == "Liked Songs" ? (
-                    <HeartFilled 
-                    style={{color:"white", fontSize:30}}
-                    className='centeredIconHomepage'/>
-
-                ) : (
-                    <></>
-                )}
+        <div className="card-top">
+            <div className='card-topBox'>
+                <div className="card-topThumbnail"
+                    style={{background: "linear-gradient(0deg, "+ playlist.randomHex1 +" 0%, "+ playlist.randomHex2 +" 100%)"}}
+                    >
+                        <Title level={1} >
+                            TOP 50
+                            <br/>
+                            {playlist.name}
+                        </Title>
+                </div>
             </div>
-            <Title level={4} className="cardName">{playlist.name}</Title>
+            <Title level={4} className="card-topName">TOP 50</Title>
+            <p className="card-topName">{playlist.name}</p>
         </div>
     </Col>
 

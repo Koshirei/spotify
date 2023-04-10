@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 var randomHex = require('random-hex');
 const data = require('../static/data.json');
-// import '../static/data.json' as static_data
 
 export interface SongDataInterface{
 	title: string,
@@ -17,6 +16,12 @@ export interface PlaylistInterface {
     randomHex1: string;
     randomHex2: string;
 	songs: SongDataInterface[]
+}
+
+export interface currentSongInterface{
+	song: SongDataInterface,
+	length: string, // on va convertir song.duration en string m:s
+	album: string, // id de playlist pour récuperer la couverture
 }
 
 const createEmptyPlaylist = (name: string) => {
@@ -35,17 +40,17 @@ const initTopPlaylists = () => {
 
 	const years = [];
 
-	for (let i = 2010; i<=2019; i++){
+	for (let i = 2019; i>=2010; i--){
 		years.push(i)
 	}
 
 	years.forEach((year)=>{
 		playlist.push({
-			id: "top-50-"+year.toString(),
-			name: "top 50 - " + year.toString(),
+			id: "TOP50-"+crypto.randomUUID(),
+			name: year.toString(),
 			randomHex1: randomHex.generate(),
 			randomHex2: randomHex.generate(),
-			songs: data.filter((song: SongDataInterface)=>song.year == year)
+			songs: data.filter((song: SongDataInterface)=>song.year === year)
 		})
 	})
 
@@ -58,7 +63,9 @@ export const SpotifySlice = createSlice({
         UserPlaylists: [createEmptyPlaylist("Liked Songs")] as PlaylistInterface[],
 		TopPlaylists: initTopPlaylists() as PlaylistInterface[],
 		AddPlaylistModalVisible: false,
-		activePage: ""
+		activePage: "",
+		currentSong : {album: "", length: "2:00", song: {title:"Select", artist:"A song", duration:0, genre:"", popularity:0, year: 0}} as currentSongInterface
+
 	},
 	reducers: {
 		createPlaylist: (state: { UserPlaylists: PlaylistInterface[]}, action: {payload: string})=>{

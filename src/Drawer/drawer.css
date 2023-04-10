@@ -3,6 +3,7 @@
     width: 301px;
 	z-index: 10;
 	overflow: auto;
+	font-family: 'DM Sans'
 }
 
 .spotify_logo{

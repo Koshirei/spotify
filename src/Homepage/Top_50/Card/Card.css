@@ -1,31 +1,30 @@
-.card{
-    height: 100px;
+.card-top{
+    width: 231px;
     background-color: #303030;
-    border-radius: 10px;
-    display: flex;
+    padding-bottom: 20px;
+    transition: 0.25s;
+    outline: 2px solid transparent;
+	font-family: 'DM Sans'
 }
 
-.cardHover :hover{
+.card-top:hover{
     cursor: pointer;
+    outline-color: #1DB954;
 }
 
-.cardThumbnail{
-    height:100px;
-    width: 100px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.card-topBox{
+    padding: 20px;
 }
-
-.cardName{
-    height: 100%;
+.card-topThumbnail{
+    height:191px;
+    width: 191px;
+    border-radius: 14px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 21px;
+    text-align: center;
 }
 
-.centeredIconHomepage{
-    display: flex;
-	justify-content: space-around;
-	height: 100%;
+.card-topName{
+    padding-left: 20px;
 }

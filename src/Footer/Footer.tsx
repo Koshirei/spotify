@@ -1,11 +1,15 @@
-import { Affix } from "antd";
+import FakeControls from './FakeControls';
+import FakePlayer from './FakePlayer';
 import './Footer.css';
+import SongTitle from "./SongTitle";
 
 const Footer = () =>{
 
     return <footer>
-            footer
-        </footer>
+            <SongTitle />
+            <FakePlayer />
+            <FakeControls />
+    </footer>
 }
 
 export default Footer;

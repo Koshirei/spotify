@@ -17,7 +17,7 @@ const Playlist = () => {
 	const userPlaylists = useSelector((state: any) => state.Spotify.UserPlaylists);
 
 	if (id !== undefined ) {
-		switch (id.includes("top-50")){
+		switch (id.includes("TOP50-")){
 			case true: playlist = topPlaylists.filter((topPlaylist: any)=>topPlaylist.id === id)[0]; break;
 			case false: playlist = userPlaylists.filter((userPlaylist: any)=>userPlaylist.id === id)[0]; break;
 		}

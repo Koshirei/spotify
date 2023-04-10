@@ -1,0 +1,26 @@
+.footerAlbum{
+    display: inline-block;
+    height:60px;
+    width: 60px;
+    background-color: red;
+}
+
+.footerSongTitleFlex,
+.footerSongTitleFlex2{
+    display: flex;
+    
+}
+.footerSongTitleFlex .footeritem{
+    margin-right:12px
+}
+.footerSongTitleFlex2{
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerArtist{
+    color:lightgrey
+}
+.footerSongTitleIcon{
+    color: #1DB954;
+}

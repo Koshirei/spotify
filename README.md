@@ -28,7 +28,7 @@
 ### Home page
 
 -   [x] Display your playlist
--   [ ] Display all the top 50 playlist given in file `src/static/data.json` by year as displayed on figma
+-   [x] Display all the top 50 playlist given in file `src/static/data.json` by year as displayed on figma
 -   [x] Click on a playlist will redirect to the playlist page
 
 ### Playlist page
@@ -64,6 +64,7 @@
 ## Footer
 
 -   [ ] On the left display playlist cover with name of music currently selected
+        <!-- faire marcher le coeur de favoris -->
 -   [ ] Display a fake player in the center
 -   [ ] Display fake control button on the right
 

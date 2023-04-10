@@ -22,12 +22,12 @@ const Card = ({
         span={6}
         onClick={() => navigate("/playlist/" + playlist.id)}
     >
-        <div className="card">
+        <div className="card-user">
             <div
-                className="cardThumbnail"
+                className="card-userThumbnail"
                 style={{ background: "linear-gradient(0deg, " + playlist.randomHex1 + " 0%, " + playlist.randomHex2 + " 100%)" }}
             >
-                {playlist.name == "Liked Songs" ? (
+                {playlist.name === "Liked Songs" ? (
                     <HeartFilled
                         style={{ color: "white", fontSize: 30 }}
                         className='centeredIconHomepage'
@@ -37,7 +37,7 @@ const Card = ({
                     <></>
                 )}
             </div>
-            <Title level={4} className="cardName">{playlist.name}</Title>
+            <Title level={4} className="card-userName">{playlist.name}</Title>
         </div>
     </Col>
 
