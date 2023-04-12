@@ -24,6 +24,13 @@ export interface currentSongInterface{
 	album: string, // id de playlist pour récuperer la couverture
 }
 
+export const duration2time = (duration:number) => {
+	const minutes = (Math.floor(duration / 60));
+	let secondes = (duration - minutes * 60);
+
+	return minutes + ":" + (secondes < 10 ? "0" + secondes : secondes)
+}
+
 const createEmptyPlaylist = (name: string) => {
 	const playlist : PlaylistInterface = {
 		id: crypto.randomUUID(),
@@ -65,7 +72,6 @@ export const SpotifySlice = createSlice({
 		AddPlaylistModalVisible: false,
 		activePage: "",
 		currentSong : {album: "", length: "2:00", song: {title:"Select", artist:"A song", duration:0, genre:"", popularity:0, year: 0}} as currentSongInterface
-
 	},
 	reducers: {
 		createPlaylist: (state: { UserPlaylists: PlaylistInterface[]}, action: {payload: string})=>{

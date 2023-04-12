@@ -33,10 +33,10 @@
 
 ### Playlist page
 
--   [ ] Header 
-    -   [ ] Color background based on playlist's cover color
-    -   [ ] Playlist cover
-    -   [ ] Playlist name
+-   [x] Header 
+    -   [x] Color background based on playlist's cover color
+    -   [x] Playlist cover
+    -   [x] Playlist name
 -   [ ] Body
     -   [ ] Text input to filter on any data in the current playlist (case insensitive)
     -   [ ] Select input with sorting on 
@@ -65,8 +65,8 @@
 
 -   [ ] On the left display playlist cover with name of music currently selected
         <!-- faire marcher le coeur de favoris -->
--   [ ] Display a fake player in the center
--   [ ] Display fake control button on the right
+-   [x] Display a fake player in the center
+-   [x] Display fake control button on the right
 
 ## General informations
 

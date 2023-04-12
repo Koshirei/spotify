@@ -1,14 +1,19 @@
 import { useParams } from "react-router-dom";
-
+import {useEffect} from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { updateSelectPageDrawer, PlaylistInterface } from '../Redux/SpotifySlice';
+import Header from "./Header";
+import Body from "./Body";
 
 const Playlist = () => {
 
 	let { id } = useParams();
 
 	const dispatch = useDispatch();
-	dispatch(updateSelectPageDrawer("/playlist/"+id));
+	
+	useEffect(()=>{
+		dispatch(updateSelectPageDrawer("/playlist/"+id));
+	}, [])
 	
 	let playlist = {} as PlaylistInterface;
 	
@@ -22,11 +27,16 @@ const Playlist = () => {
 			case false: playlist = userPlaylists.filter((userPlaylist: any)=>userPlaylist.id === id)[0]; break;
 		}
 	}
-
-	console.log(playlist);
-
 		
-	return playlist === undefined ?<div>undefined </div> : <div>{id}</div>
+	return (
+		playlist === undefined 
+		? <div>
+			Playlist ID does not exist 
+		</div> 
+		: <div>
+			<Header playlist={playlist} />
+			<Body playlist={playlist} />
+		</div>)
 }
 
 export default Playlist

@@ -14,7 +14,8 @@
     color: #1DB954;
 }
 
-.FakeControlsIcon{
+.FakeControlsIcon,
+.FakeControlsVolumeBar{
     margin-left: 10px;
     font-size: x-large;
 }

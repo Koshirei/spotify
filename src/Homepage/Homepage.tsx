@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-
+import { useEffect } from "react"
 import './Homepage.css';
 
 import Your_playlists from './Your_playlists';
@@ -9,7 +9,10 @@ import { updateSelectPageDrawer } from '../Redux/SpotifySlice';
 const Homepage = () => {
 
     const dispatch = useDispatch();
-    dispatch(updateSelectPageDrawer("home"))
+
+    useEffect(()=>{
+		dispatch(updateSelectPageDrawer("home"));
+	}, [])
 
     return <div className="content">
         <Your_playlists />

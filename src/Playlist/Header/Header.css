@@ -1,0 +1,17 @@
+.PlaylistHeader{
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.PlaylistHeaderWrapper{
+    display:flex;
+    margin-left: 35px;
+}
+
+.PlaylistHeaderSquare{
+    height:165px;
+    width: 165px;
+    outline: 2px solid #1DB954;
+}
