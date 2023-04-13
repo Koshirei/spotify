@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
-import { currentSongInterface } from "../../Redux/SpotifySlice";
+import {useEffect, useState} from "react"
+import { SongDataInterface, currentSongInterface } from "../../Redux/SpotifySlice";
 import { HeartOutlined } from "@ant-design/icons";
 
 import './SongTitle.css'
+import FavoriteBtn from "../../FavoriteBtn";
 
 const SongTitle = () => {
 
@@ -10,13 +12,13 @@ const SongTitle = () => {
 
     return (
     <div className="footerSongTitleFlex">
-        <div className="footerAlbum footeritem" />
+        <div 
+            className="footerAlbum footeritem" 
+            style={{ background: "linear-gradient(0deg, " + currentSong.album.split("|")[0] + " 0%, " + currentSong.album.split("|")[1] + " 100%)" }}
+        />
         <div className="footerSongTitleFlex2 footeritem">
             <div className="footerTitle">{currentSong.song.title}</div>
             <div className="footerArtist">{currentSong.song.artist}</div>
-        </div>
-        <div className="footerSongTitleFlex2 footeritem footerSongTitleIcon">
-            <HeartOutlined />
         </div>
     </div>
     )

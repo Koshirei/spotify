@@ -45,9 +45,9 @@
         -   [ ] Genre
         -   [ ] Popularity
         -   [ ] Duration 
-    -   [ ] Display all songs of the current playlist
-    -   [ ] Display a green heart if the song as been liked
-    -   [ ] Clicking on heart will add / remove from liked playlist
+    -   [x] Display all songs of the current playlist
+    -   [x] Display a green heart if the song as been liked
+    -   [x] Clicking on heart will add / remove from liked playlist
     -   [ ] Contextual menu will display list of playlist, click on one will add song to it
 
 ## Left drawer
@@ -63,8 +63,7 @@
 
 ## Footer
 
--   [ ] On the left display playlist cover with name of music currently selected
-        <!-- faire marcher le coeur de favoris -->
+-   [x] On the left display playlist cover with name of music currently selected
 -   [x] Display a fake player in the center
 -   [x] Display fake control button on the right
 

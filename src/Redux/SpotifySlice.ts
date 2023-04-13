@@ -85,6 +85,22 @@ export const SpotifySlice = createSlice({
 		},
 		updateSelectPageDrawer:(state: {activePage:string}, action: {payload:string})=>{
 			state.activePage = action.payload;
+		},
+		addSong2Favorites:(state: {UserPlaylists: PlaylistInterface[]}, action: {payload: SongDataInterface})=>{
+			state.UserPlaylists[0].songs.push(action.payload);
+		},
+		removeSongFromFavorites:(state: {UserPlaylists: PlaylistInterface[]}, action: {payload: SongDataInterface})=>{			
+			state.UserPlaylists[0].songs = state.UserPlaylists[0].songs.filter((song)=>{
+				return song.title !== action.payload.title
+			})
+		},
+		setCurrentPlayingSong:(state: {currentSong: currentSongInterface}, action: {payload:[SongDataInterface, string]})=> {
+			let song = action.payload[0]
+			state.currentSong = {
+				length: duration2time(song.duration),
+				song:song,
+				album: action.payload[1]
+			}
 		}
 	},
 });
@@ -93,7 +109,10 @@ export const {
 	createPlaylist,
 	showAddPlaylistModal,
 	hideAddPlaylistModal,
-	updateSelectPageDrawer
+	updateSelectPageDrawer,
+	addSong2Favorites,
+	removeSongFromFavorites,
+	setCurrentPlayingSong
 } = SpotifySlice.actions;
 
 export default SpotifySlice.reducer;

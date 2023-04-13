@@ -19,7 +19,7 @@ const AddPlaylistModal = () => {
 
     useEffect(()=>{
 
-        newPlaylistName == "" ? setErrorEmpty(true) : setErrorEmpty(false);
+        newPlaylistName === "" ? setErrorEmpty(true) : setErrorEmpty(false);
 
         if( UserPlaylists.filter((playlist:PlaylistInterface)=>playlist.name === newPlaylistName).length > 0 || 
             TopPlaylists.filter((playlist:PlaylistInterface)=>playlist.name === newPlaylistName).length > 0 ){
@@ -46,8 +46,7 @@ const AddPlaylistModal = () => {
 
     const handleOnModalOk = () => {
 
-        if (errorEmpty == false && errorDupeName == false){
-            console.log(errorEmpty, errorDupeName)
+        if (errorEmpty === false && errorDupeName === false){
             dispatch(createPlaylist(newPlaylistName));
             handleOnModalCancel();
         }
@@ -71,18 +70,18 @@ const AddPlaylistModal = () => {
             placeholder='Playlist name'
             value={newPlaylistName}
             onChange={handleInputOnWriting}
-            status={errorEmpty == true || errorDupeName == true ? "error" : ""}
+            status={errorEmpty === true || errorDupeName === true ? "error" : ""}
         />
 
         <br/><br/>
 
-        {errorEmpty == true ? (
+        {errorEmpty === true ? (
             <Alert 
                 message="Empty Field"
                 description="Please give a title to your new playlist."
                 type="error"
             />
-        ) : errorDupeName == true ? (
+        ) : errorDupeName === true ? (
             <Alert 
                 message="Duplicate name"
                 description="Please do not use a playlist name already in use."

@@ -1,6 +1,8 @@
 import { Table } from "antd";
-import { PlaylistInterface, SongDataInterface, duration2time } from "../../Redux/SpotifySlice";
-import { useState } from 'react'
+import { PlaylistInterface, SongDataInterface, duration2time, setCurrentPlayingSong } from "../../Redux/SpotifySlice";
+import { useState, useEffect } from 'react'
+import FavoriteBtn from "../../FavoriteBtn";
+import { useDispatch } from "react-redux";
 
 interface BodyInterface {
     playlist: PlaylistInterface
@@ -11,6 +13,11 @@ const Body = ({
 }: BodyInterface) => {
 
     const [songs, setSongs] = useState<SongDataInterface[]>(playlist.songs)
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        setSongs(playlist.songs)
+    }, [playlist.songs])
 
     const columns = [
         {
@@ -19,9 +26,19 @@ const Body = ({
             key: "key"
         },
         {
+            title: "",
+            dataIndex: "fav",
+            key: "fav"
+        },
+        {
             title: 'TITLE',
             dataIndex: 'title',
             key: 'title'
+        },
+        {
+            title: 'ARTIST',
+            dataIndex: 'artist',
+            key: 'artist'
         },
         {
             title: 'YEAR',
@@ -45,6 +62,17 @@ const Body = ({
         }
     ]
 
+    const handleUpdateCurrentPlayingSong = (record: any) => {
+        dispatch(setCurrentPlayingSong([{
+            artist: record.artist,
+            duration: record.trueDuration,
+            genre: record.genre,
+            popularity: record.popularity,
+            title: record.title,
+            year: record.year
+        }, playlist.randomHex1+"|"+playlist.randomHex2]))
+    }
+
     return <div>
         
         <Table 
@@ -52,11 +80,14 @@ const Body = ({
                 songs.map((song, index)=>{
                     return {
                         key: index+1,
+                        fav: <FavoriteBtn song={song} />,
                         title: song.title,
+                        artist: song.artist,
                         year: song.year,
                         genre: song.genre,
                         popularity: song.popularity,
-                        duration: duration2time(song.duration)
+                        duration: duration2time(song.duration),
+                        trueDuration: song.duration
                     }
                 })
             }
@@ -64,8 +95,8 @@ const Body = ({
             pagination={false}
             onRow={(record, rowIndex)=>{
                 return {
-                    onClick: (event)=>{console.log("onclick ", event, record, rowIndex)},
-                    onContextMenu: (event)=>{console.log("oncontextmenu ", event, record, rowIndex)}
+                    onClick: (event => {handleUpdateCurrentPlayingSong(record)}),
+                    onContextMenu: (event)=>{}
                 }
             }}
         />

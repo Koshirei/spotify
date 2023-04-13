@@ -1,0 +1,8 @@
+.FavoriteGreenIcon{
+    color: #1DB954;
+    font-size: larger;
+}
+
+.FavoriteGreenIcon :hover{
+    cursor: pointer;
+}
