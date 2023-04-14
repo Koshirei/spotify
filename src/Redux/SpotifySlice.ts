@@ -71,7 +71,8 @@ export const SpotifySlice = createSlice({
 		TopPlaylists: initTopPlaylists() as PlaylistInterface[],
 		AddPlaylistModalVisible: false,
 		activePage: "",
-		currentSong : {album: "", length: "2:00", song: {title:"Select", artist:"A song", duration:0, genre:"", popularity:0, year: 0}} as currentSongInterface
+		currentSong : {album: "", length: "2:00", song: {title:"Select", artist:"A song", duration:0, genre:"", popularity:0, year: 0}} as currentSongInterface,
+		AddSong2PlaylistModalVisible: false
 	},
 	reducers: {
 		createPlaylist: (state: { UserPlaylists: PlaylistInterface[]}, action: {payload: string})=>{
@@ -101,6 +102,30 @@ export const SpotifySlice = createSlice({
 				song:song,
 				album: action.payload[1]
 			}
+		},
+		showAddSong2PlaylistModal:(state:{AddSong2PlaylistModalVisible: boolean})=>{
+			state.AddSong2PlaylistModalVisible = true
+		},
+		hideAddSong2PlaylistModal:(state:{AddSong2PlaylistModalVisible: boolean})=>{
+			state.AddSong2PlaylistModalVisible = false
+		},
+		addSongToPlaylist:(state:{UserPlaylists: PlaylistInterface[]}, action: {payload: [string, SongDataInterface]})=>{
+			state.UserPlaylists.map((playlist:PlaylistInterface)=>{
+				if (playlist.id === action.payload[0]){
+					playlist.songs.push(action.payload[1])
+				}
+
+				return playlist
+			})
+		},
+		removeSongFromPlaylist:(state:{UserPlaylists: PlaylistInterface[]}, action: {payload: [string, SongDataInterface]})=>{
+			state.UserPlaylists.map((playlist:PlaylistInterface)=>{
+				if (playlist.id === action.payload[0]){
+					playlist.songs = playlist.songs.filter((song:SongDataInterface)=>song.title!==action.payload[1].title)
+				}
+
+				return playlist
+			})
 		}
 	},
 });
@@ -112,7 +137,11 @@ export const {
 	updateSelectPageDrawer,
 	addSong2Favorites,
 	removeSongFromFavorites,
-	setCurrentPlayingSong
+	setCurrentPlayingSong,
+	showAddSong2PlaylistModal,
+	hideAddSong2PlaylistModal,
+	addSongToPlaylist,
+	removeSongFromPlaylist
 } = SpotifySlice.actions;
 
 export default SpotifySlice.reducer;

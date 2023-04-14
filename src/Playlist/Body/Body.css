@@ -1,0 +1,22 @@
+.PlaylistBodyFilterInput{
+    width:256px;
+    height:32px;
+    background-color: #737373;
+    border-radius: 25px;
+    margin: 20px;
+    border: 2px solid white;
+}
+
+.PlaylistBodyFilterInput::placeholder{
+    color:white
+}
+
+.PlaylistBodyFilterInput:hover,
+.PlaylistBodyFilterInput:focus{
+    border-color: #1DB954;
+}
+
+.PlaylistFilterWrapper{
+    
+    text-align: right;
+}

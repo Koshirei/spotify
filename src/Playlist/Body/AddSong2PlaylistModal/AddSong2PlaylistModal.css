@@ -1,0 +1,18 @@
+.Add2PlaylistBtn,
+.RemoveFromPlaylistBtn{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.RemoveFromPlaylistBtn{
+    border: #1DB954 2px solid;
+}
+
+.Add2PlaylistBtn{
+    border: lightgrey 2px solid;
+}
+
+.AddSong2PlaylistModal .ant-btn-default:hover{
+    border-color: gold;
+}

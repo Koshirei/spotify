@@ -37,18 +37,18 @@
     -   [x] Color background based on playlist's cover color
     -   [x] Playlist cover
     -   [x] Playlist name
--   [ ] Body
-    -   [ ] Text input to filter on any data in the current playlist (case insensitive)
-    -   [ ] Select input with sorting on 
-        -   [ ] Title
-        -   [ ] Year
-        -   [ ] Genre
-        -   [ ] Popularity
-        -   [ ] Duration 
+-   [x] Body
+    -   [x] Text input to filter on any data in the current playlist (case insensitive)
+    -   [x] Select input with sorting on 
+        -   [x] Title
+        -   [x] Year
+        -   [x] Genre
+        -   [x] Popularity
+        -   [x] Duration 
     -   [x] Display all songs of the current playlist
     -   [x] Display a green heart if the song as been liked
     -   [x] Clicking on heart will add / remove from liked playlist
-    -   [ ] Contextual menu will display list of playlist, click on one will add song to it
+    -   [x] Contextual menu will display list of playlist, click on one will add song to it
 
 ## Left drawer
 
